@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  aegis-scout:
+    build: .
+    container_name: aegis-scout-cli
+    volumes:
+      - ./reports:/app/reports
+      - ./db:/app/db
+    env_file:
+      - .env
+    # Para manter o container rodando e acessar via exec, descomente:
+    # command: tail -f /dev/null
